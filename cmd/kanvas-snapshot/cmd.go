@@ -31,7 +31,11 @@ var (
 	designName string
 )
 
-var emailRegex = regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$`)
+var (
+	emailRegex    = regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$`)
+	urlRegex      = regexp.MustCompile(`^(http(s)?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- ;,./?%&=]*)?$`)
+	filePathRegex = regexp.MustCompile(`^(\/|\.\/|\.\.\/)?([\w-]+\/)*[\w-]+\.(tgz|tar\.gz)$`)
+)
 
 var generateKanvasSnapshotCmd = &cobra.Command{
 	Use:   "kanvas",
@@ -51,6 +55,11 @@ var generateKanvasSnapshotCmd = &cobra.Command{
 		-h			Help for Helm Kanvas Snapshot plugin`,
 
 	RunE: func(_ *cobra.Command, _ []string) error {
+		// Validate Helm chart URI format
+		if !isValidChartURI(chartURI) {
+			err := fmt.Errorf("invalid chart URI: %s", chartURI)
+			handleError(errors.ErrInvalidChartURI(err))
+		}
 		// Use the extracted name from URI if not provided
 		if designName == "" {
 			designName = ExtractNameFromURI(chartURI)
@@ -227,6 +236,10 @@ func GenerateSnapshot(contentID, assetLocation string, ghAccessToken string) err
 
 func isValidEmail(email string) bool {
 	return emailRegex.MatchString(email)
+}
+
+func isValidChartURI(uri string) bool {
+	return urlRegex.MatchString(uri) || filePathRegex.MatchString(uri)
 }
 
 func Main(providerToken, mesheryCloudAPIBaseURL, mesheryAPIBaseURL, workflowAccessToken string) {
