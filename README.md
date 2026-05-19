@@ -44,7 +44,7 @@ To install the Meshery Snapshot Helm Plugin, use the following steps:
 ### Prerequisites
 
 - `helm` must be [installed]( helm plugin install https://github.com/meshery-extensions/helm-kanvas-snapshot) on your system.
-- (Optional) A free [Meshery Cloud](https://cloud.layer5.io) user account.
+- (Optional) A free [Meshery Cloud](https://cloud.meshery.io) user account.
 
 **Plugin Installation**
 
@@ -143,7 +143,7 @@ Find out more on the <a href="https://meshery.io/community#meshmates">Meshery co
 <br /><br />
 <div style="display: flex; justify-content: center; align-items:center;">
 <div>
-<a href="https://meshery.io/community"><img alt="Meshery Cloud Native Community" src="https://docs.meshery.io/assets/img/readme/community.png" width="140px" style="margin-right:36px; margin-bottom:7px;" width="140px" align="left"/></a>
+<a href="https://meshery.io/community"><img alt="Meshery Cloud Native Community" src="https://raw.githubusercontent.com/meshery/meshery/master/.github/assets/images/meshery/meshery-logo.svg" width="140px" style="margin-right:36px; margin-bottom:7px;" width="140px" align="left"/></a>
 </div>
 <div style="width:60%; padding-left: 16px; padding-right: 16px">
 <p>
@@ -167,7 +167,7 @@ Find out more on the <a href="https://meshery.io/community#meshmates">Meshery co
 </div>
 <br /><br />
 <p align="left">
-&nbsp;&nbsp;&nbsp;&nbsp; <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted label</a>.
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted label</a>.
 </p>
 <br /><br />
 
