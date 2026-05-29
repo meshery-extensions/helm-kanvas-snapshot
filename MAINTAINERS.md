@@ -1,9 +1,1 @@
-### Extension Maintainers
-
-| Name                    | GitHub            | Affiliation  |
-| ----------------------- | ----------------- | ------------ |
-| Ijeomoa Eti             | Aijeyomah         | Manufactured |
-| Lee Calcote             | leecalcote        | Layer5       |
-| Pranav Singh            | theBeginner86     | Intel        |
-
-See https://github.com/meshery/meshery for more maintainers
+The current maintainers of the Meshery project can be found in the [MAINTAINERS.md](https://github.com/meshery/meshery/blob/master/MAINTAINERS.md) file in the [meshery/meshery]((https://github.com/meshery/meshery) repository.\n
