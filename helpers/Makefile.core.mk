@@ -1,4 +1,4 @@
-GOVERSION = 1.21
+GOVERSION = 1.26.4
 PROVIDER_TOKEN="dev_token"
 MESHERY_CLOUD_API_BASE_URL="https://cloud.layer5.io"
 MESHERY_API_BASE_URL="https://playground.meshery.io"
