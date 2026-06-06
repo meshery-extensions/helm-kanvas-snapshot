@@ -1,6 +1,6 @@
 module github.com/meshery-extensions/helm-kanvas-snapshot
 
-go 1.23.4
+go 1.26.4
 
 require (
 	github.com/layer5io/meshkit v0.8.29
