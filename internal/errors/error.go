@@ -49,8 +49,8 @@ func ErrHTTPPostRequest(err error) error {
 	return errors.New(ErrHTTPPostRequestCode, errors.Alert,
 		[]string{"Failed to perform HTTP POST request."},
 		[]string{err.Error()},
-		[]string{"HTTP POST request failed during interaction with Meshery API."},
-		[]string{"Check Meshery API endpoint and ensure valid request payload."},
+		[]string{"HTTP POST request failed while communicating with the Meshery API."},
+		[]string{"Check network connectivity, Meshery API availability, request parameters, and authentication credentials."},
 	)
 }
 
