@@ -1,5 +1,7 @@
 # Meshery Extension: Kanvas Snapshot Helm Plugin
 
+<a href="https://github.com/meshery/meshery/blob/master/GOVERNANCE.md#extensions-githubcommeshery-extensions"><img src="https://img.shields.io/badge/support-community-00B39F?style=flat-square&logo=meshery&logoColor=white"  alt="Level of support for this repo"></a>
+
 [Meshery Extensions](https://meshery.io/extension) are plugins or add-ons that enhance the functionality of the Meshery platform beyond its core capabilities. Meshery supports different types of extensions ([docs](https://docs.meshery.io/extensions/)):
 
 - [Adapters](https://docs.meshery.io/concepts/architecture/adapters): Adapters allow Meshery to interface with the different cloud native infrastructure.
