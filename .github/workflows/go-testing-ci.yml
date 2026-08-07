@@ -51,12 +51,7 @@ jobs:
           go-version-file: go.mod
       - name: Run coverage
         run: go test --short ./... -race -coverprofile=coverage.txt -covermode=atomic
-      - name: Upload coverage to Codecov
-        if: github.repository == 'meshery-extensions/helm-kanvas-snapshot'
-        uses: codecov/codecov-action@v4
-        with:
-          files: ./coverage.txt
-          flags: unittests
+      
   integration-tests:
     name: Integration tests
     runs-on: ubuntu-24.04
@@ -83,11 +78,4 @@ jobs:
         run:
           # TODO: add tests for snapshot
           echo "Running kanvas snapshot test completed."
-
-      - name: Upload coverage to Codecov
-        if: github.repository == 'meshery-extensions/helm-kanvas-snapshot'
-        uses: codecov/codecov-action@v4
-        with:
-          files: ./coverage.txt
-          flags: gointegrationtests
 
