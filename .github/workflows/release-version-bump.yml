@@ -1,0 +1,46 @@
+name: update release version in plugin.yaml
+on:
+  release:
+    types: "published"
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract version from release tag
+        id: get_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${VERSION#v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
+
+      - name: Update plugin.yaml version
+        run: |
+          VERSION="${{ steps.get_version.outputs.version }}"
+          sed -i "s/^version: \".*\"/version: \"$VERSION\"/" plugin.yaml
+          echo "Updated plugin.yaml with version: $VERSION"
+          grep "^version:" plugin.yaml
+
+      - name: Pull changes from remote
+        run: git pull origin ${{ github.event.release.target_commitish }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: plugin.yaml
+          commit_user_name: l5io
+          commit_user_email: ci@layer5.io
+          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          commit_options: "--signoff"
+          commit_message: "chore: bump plugin version to ${{ steps.get_version.outputs.version }}"
+          branch: ${{ github.event.release.target_commitish }}
