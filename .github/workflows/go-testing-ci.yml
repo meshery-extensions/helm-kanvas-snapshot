@@ -21,7 +21,7 @@ jobs:
   golangci:
     strategy:
       matrix:
-        go: [1.26.4]
+        go: [1.27.3]
         os: [ubuntu-24.04]
     name: golangci-lint
     if: github.repository == 'meshery-extensions/helm-kanvas-snapshot'
